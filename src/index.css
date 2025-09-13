@@ -2,75 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global Intelligence Desk - Professional AI-Powered Design System
-All colors MUST be HSL for enterprise-grade dark theme interface.
+/* GLOBAL INTELLIGENCE DESK - ENTERPRISE DESIGN SYSTEM
+   Professional dark-mode interface for classified intelligence operations.
+   All colors use HSL for precise theming and accessibility compliance.
 */
 
 @layer base {
   :root {
-    /* Professional Dark Intelligence Theme */
-    --background: 210 30% 4%;
-    --foreground: 210 15% 98%;
+    /* Core Enterprise Dark Theme */
+    --background: 210 30% 3%;
+    --foreground: 210 12% 97%;
 
-    --card: 210 25% 6%;
-    --card-foreground: 210 15% 98%;
+    --card: 210 28% 5%;
+    --card-foreground: 210 12% 97%;
 
-    --popover: 210 25% 6%;
-    --popover-foreground: 210 15% 98%;
+    --popover: 210 28% 5%;
+    --popover-foreground: 210 12% 97%;
 
-    --primary: 197 87% 65%;
+    --primary: 197 85% 62%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 25% 8%;
-    --secondary-foreground: 210 15% 98%;
+    --secondary: 210 28% 7%;
+    --secondary-foreground: 210 12% 94%;
 
-    --muted: 210 25% 7%;
-    --muted-foreground: 210 8% 65%;
+    --muted: 210 28% 6%;
+    --muted-foreground: 210 10% 68%;
 
-    --accent: 210 25% 10%;
-    --accent-foreground: 210 15% 98%;
+    --accent: 210 28% 9%;
+    --accent-foreground: 210 12% 97%;
 
-    --destructive: 0 90% 65%;
+    --destructive: 0 88% 63%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 25% 12%;
-    --input: 210 25% 8%;
-    --ring: 197 87% 65%;
+    --border: 210 28% 11%;
+    --input: 210 28% 7%;
+    --ring: 197 85% 62%;
 
-    /* Intelligence Status Colors */
-    --critical: 0 90% 65%;
-    --high: 25 100% 58%;
-    --medium: 48 100% 58%;
-    --low: 142 80% 40%;
+    /* Professional Status Classification */
+    --critical: 0 88% 63%;
+    --high: 25 95% 55%;
+    --medium: 48 95% 55%;
+    --low: 142 75% 38%;
+    --info: 197 85% 62%;
 
-    /* AI & Intelligence Colors */
-    --ai-primary: 270 95% 75%;
-    --ai-secondary: 197 87% 65%;
-    --ai-accent: 320 85% 70%;
-    --intelligence: 220 90% 70%;
-    --classified: 340 85% 60%;
+    /* AI & Advanced Intelligence */
+    --ai-primary: 268 90% 72%;
+    --ai-secondary: 197 85% 62%;
+    --ai-accent: 318 80% 68%;
+    --intelligence: 220 85% 68%;
+    --classified: 338 80% 58%;
+    --neural: 280 75% 65%;
 
-    /* Dashboard Components */
-    --sidebar: 210 30% 5%;
-    --header: 210 25% 6%;
-    --map-bg: 210 15% 8%;
-    --intel-panel: 210 25% 7%;
-    --threat-indicator: 0 100% 50%;
-    --safe-indicator: 142 80% 40%;
+    /* Professional Components */
+    --sidebar: 210 32% 4%;
+    --header: 210 28% 5%;
+    --map-bg: 210 18% 7%;
+    --intel-panel: 210 28% 6%;
+    --threat-indicator: 0 95% 48%;
+    --safe-indicator: 142 75% 38%;
     
-    /* Advanced Glass & Neural Effects */
-    --glass-bg: 210 25% 6% / 0.9;
-    --glass-border: 210 15% 98% / 0.08;
-    --neural-glow: 197 87% 65% / 0.3;
-    --ai-gradient-start: 270 95% 75%;
-    --ai-gradient-end: 197 87% 65%;
+    /* Advanced Visual Effects */
+    --glass-bg: 210 28% 5% / 0.95;
+    --glass-border: 210 12% 97% / 0.12;
+    --neural-glow: 197 85% 62% / 0.35;
+    --ai-gradient-start: 268 90% 72%;
+    --ai-gradient-end: 197 85% 62%;
+    --enterprise-shadow: 210 50% 2% / 0.8;
     
-    /* Threat Level Gradients */
-    --threat-gradient-critical: linear-gradient(135deg, hsl(0 90% 65%), hsl(340 85% 60%));
-    --threat-gradient-high: linear-gradient(135deg, hsl(25 100% 58%), hsl(48 100% 58%));
-    --threat-gradient-safe: linear-gradient(135deg, hsl(142 80% 40%), hsl(197 87% 65%));
+    /* Professional Gradients */
+    --threat-gradient-critical: linear-gradient(135deg, hsl(0 88% 63%), hsl(338 80% 58%));
+    --threat-gradient-high: linear-gradient(135deg, hsl(25 95% 55%), hsl(48 95% 55%));
+    --threat-gradient-medium: linear-gradient(135deg, hsl(48 95% 55%), hsl(142 75% 38%));
+    --threat-gradient-safe: linear-gradient(135deg, hsl(142 75% 38%), hsl(197 85% 62%));
+    --ai-gradient: linear-gradient(135deg, hsl(268 90% 72%), hsl(197 85% 62%));
+    --enterprise-gradient: linear-gradient(180deg, hsl(210 28% 5%), hsl(210 32% 4%));
     
-    --radius: 0.5rem;
+    --radius: 6px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -127,10 +134,13 @@ All colors MUST be HSL for enterprise-grade dark theme interface.
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-optical-sizing: auto;
   }
 
   /* Leaflet Map Styles */
@@ -171,20 +181,20 @@ All colors MUST be HSL for enterprise-grade dark theme interface.
     @apply bg-accent;
   }
 
-  /* Professional Intelligence Animations */
+  /* ENTERPRISE ANIMATIONS & EFFECTS */
   @keyframes pulse-glow {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
+    50% { opacity: 0.7; }
   }
 
   @keyframes neural-pulse {
     0%, 100% { 
-      box-shadow: 0 0 20px hsl(var(--neural-glow));
+      box-shadow: 0 0 24px hsl(var(--neural-glow));
       opacity: 1; 
     }
     50% { 
-      box-shadow: 0 0 40px hsl(var(--neural-glow));
-      opacity: 0.8; 
+      box-shadow: 0 0 48px hsl(var(--neural-glow));
+      opacity: 0.85; 
     }
   }
 
@@ -196,75 +206,147 @@ All colors MUST be HSL for enterprise-grade dark theme interface.
 
   @keyframes ai-thinking {
     0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.05) rotate(2deg); }
+    25% { transform: scale(1.02) rotate(1deg); }
+    75% { transform: scale(1.02) rotate(-1deg); }
+  }
+
+  @keyframes enterprise-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--enterprise-shadow)), 0 4px 20px hsl(var(--border) / 0.1);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--enterprise-shadow)), 0 8px 30px hsl(var(--border) / 0.2);
+    }
+  }
+
+  @keyframes data-flow {
+    0% { transform: translateY(-10px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0; }
   }
 
   .animate-pulse-glow {
-    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse-glow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .animate-neural-pulse {
-    animation: neural-pulse 3s ease-in-out infinite;
+    animation: neural-pulse 3.5s ease-in-out infinite;
   }
 
   .animate-threat-scan {
-    animation: threat-scan 2s linear infinite;
+    animation: threat-scan 2.5s linear infinite;
   }
 
   .animate-ai-thinking {
-    animation: ai-thinking 4s ease-in-out infinite;
+    animation: ai-thinking 5s ease-in-out infinite;
   }
 
-  /* Professional Status Indicators */
+  .animate-enterprise-glow {
+    animation: enterprise-glow 4s ease-in-out infinite;
+  }
+
+  .animate-data-flow {
+    animation: data-flow 3s ease-in-out infinite;
+  }
+
+  /* ENTERPRISE STATUS INDICATORS */
   .status-critical { 
-    @apply bg-[hsl(var(--critical))] text-white border border-[hsl(var(--critical)/0.3)];
-    box-shadow: 0 0 20px hsl(var(--critical) / 0.3);
+    @apply bg-[hsl(var(--critical))] text-white border border-[hsl(var(--critical)/0.4)] font-medium;
+    box-shadow: 0 4px 24px hsl(var(--critical) / 0.25), 0 0 0 1px hsl(var(--critical) / 0.1);
+    backdrop-filter: blur(8px);
   }
   .status-high { 
-    @apply bg-[hsl(var(--high))] text-white border border-[hsl(var(--high)/0.3)];
-    box-shadow: 0 0 15px hsl(var(--high) / 0.2);
+    @apply bg-[hsl(var(--high))] text-white border border-[hsl(var(--high)/0.4)] font-medium;
+    box-shadow: 0 4px 20px hsl(var(--high) / 0.2), 0 0 0 1px hsl(var(--high) / 0.1);
+    backdrop-filter: blur(8px);
   }
   .status-medium { 
-    @apply bg-[hsl(var(--medium))] text-black border border-[hsl(var(--medium)/0.3)];
-    box-shadow: 0 0 10px hsl(var(--medium) / 0.2);
+    @apply bg-[hsl(var(--medium))] text-black border border-[hsl(var(--medium)/0.4)] font-medium;
+    box-shadow: 0 4px 16px hsl(var(--medium) / 0.2), 0 0 0 1px hsl(var(--medium) / 0.1);
+    backdrop-filter: blur(8px);
   }
   .status-low { 
-    @apply bg-[hsl(var(--low))] text-white border border-[hsl(var(--low)/0.3)];
-    box-shadow: 0 0 10px hsl(var(--low) / 0.2);
+    @apply bg-[hsl(var(--low))] text-white border border-[hsl(var(--low)/0.4)] font-medium;
+    box-shadow: 0 4px 16px hsl(var(--low) / 0.2), 0 0 0 1px hsl(var(--low) / 0.1);
+    backdrop-filter: blur(8px);
   }
 
-  /* AI & Intelligence Indicators */
+  /* ADVANCED AI & INTELLIGENCE INDICATORS */
   .ai-indicator {
-    background: linear-gradient(135deg, hsl(var(--ai-gradient-start)), hsl(var(--ai-gradient-end)));
-    @apply text-white border border-[hsl(var(--ai-primary)/0.3)];
-    box-shadow: 0 0 20px hsl(var(--ai-primary) / 0.3);
+    background: var(--ai-gradient);
+    @apply text-white border border-[hsl(var(--ai-primary)/0.4)] font-semibold;
+    box-shadow: 0 4px 24px hsl(var(--ai-primary) / 0.3), 0 0 0 1px hsl(var(--ai-primary) / 0.1);
+    backdrop-filter: blur(12px);
   }
 
   .threat-level-critical {
     background: var(--threat-gradient-critical);
-    @apply text-white;
+    @apply text-white font-bold;
+    box-shadow: 0 4px 24px hsl(var(--critical) / 0.4);
+  }
+
+  .threat-level-high {
+    background: var(--threat-gradient-high);
+    @apply text-white font-semibold;
+    box-shadow: 0 4px 20px hsl(var(--high) / 0.3);
+  }
+
+  .threat-level-medium {
+    background: var(--threat-gradient-medium);
+    @apply text-black font-semibold;
+    box-shadow: 0 4px 16px hsl(var(--medium) / 0.3);
   }
 
   .threat-level-safe {
     background: var(--threat-gradient-safe);
-    @apply text-white;
+    @apply text-white font-semibold;
+    box-shadow: 0 4px 16px hsl(var(--low) / 0.3);
   }
 
   .intel-classification {
-    @apply bg-[hsl(var(--classified))] text-white border border-[hsl(var(--classified)/0.3)];
-    box-shadow: 0 0 15px hsl(var(--classified) / 0.2);
+    @apply bg-[hsl(var(--classified))] text-white border border-[hsl(var(--classified)/0.4)] font-bold;
+    box-shadow: 0 4px 20px hsl(var(--classified) / 0.25), 0 0 0 1px hsl(var(--classified) / 0.1);
+    backdrop-filter: blur(8px);
   }
 
-  /* Glass Morphism Effects */
+  /* ENTERPRISE GLASS MORPHISM & EFFECTS */
   .glass-card {
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px) saturate(180%);
     @apply bg-[hsl(var(--glass-bg))] border border-[hsl(var(--glass-border))];
+    box-shadow: 0 8px 32px hsl(var(--enterprise-shadow));
   }
 
   .neural-border {
     border: 1px solid hsl(var(--neural-glow));
     box-shadow: 
-      0 0 20px hsl(var(--neural-glow)),
-      inset 0 0 20px hsl(var(--neural-glow) / 0.1);
+      0 0 24px hsl(var(--neural-glow)),
+      inset 0 0 24px hsl(var(--neural-glow) / 0.15),
+      0 4px 20px hsl(var(--enterprise-shadow));
+  }
+
+  .enterprise-card {
+    @apply bg-card border border-border;
+    box-shadow: 
+      0 4px 24px hsl(var(--enterprise-shadow)),
+      0 0 0 1px hsl(var(--border) / 0.5);
+    backdrop-filter: blur(8px);
+  }
+
+  .professional-gradient {
+    background: var(--enterprise-gradient);
+  }
+
+  /* Typography Enhancements */
+  .text-enterprise-heading {
+    @apply text-foreground font-bold tracking-tight;
+    text-shadow: 0 2px 4px hsl(var(--enterprise-shadow));
+  }
+
+  .text-intelligence {
+    @apply text-[hsl(var(--intelligence))] font-semibold;
+  }
+
+  .text-classified {
+    @apply text-[hsl(var(--classified))] font-bold;
   }
 }

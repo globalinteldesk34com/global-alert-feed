@@ -20,98 +20,98 @@ export const Header = ({
   onSearchChange 
 }: HeaderProps) => {
   return (
-    <header className="h-18 bg-[hsl(var(--header))] border-b border-border flex items-center justify-between px-6 z-10 glass-card">
-      <div className="flex items-center space-x-6">
-        <div className="flex items-center space-x-3">
-          <div className="p-2 rounded-lg ai-indicator">
-            <Shield className="h-6 w-6" />
+    <header className="h-20 bg-[hsl(var(--header))] border-b border-border flex items-center justify-between px-8 z-10 glass-card professional-gradient">
+      <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-4">
+          <div className="p-3 rounded-lg ai-indicator animate-enterprise-glow">
+            <Shield className="h-7 w-7" />
           </div>
-          <div>
-            <h1 className="text-xl font-bold text-foreground">Global Intelligence Desk</h1>
-            <p className="text-xs text-muted-foreground">AI-Powered Geopolitical Analysis Platform</p>
+          <div className="flex flex-col">
+            <h1 className="text-2xl font-bold text-enterprise-heading tracking-tight">Global Intelligence Desk</h1>
+            <p className="text-sm text-intelligence font-medium">Professional OSINT Analysis Platform</p>
           </div>
         </div>
         
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2 p-2 rounded-lg bg-[hsl(var(--muted))] neural-border">
-            <div className="w-2 h-2 bg-[hsl(var(--low))] rounded-full animate-pulse-glow" />
-            <span className="text-xs font-medium">NEURAL SYSTEMS ONLINE</span>
+        <div className="flex items-center space-x-5">
+          <div className="flex items-center space-x-3 px-4 py-2 rounded-lg enterprise-card neural-border">
+            <div className="w-2.5 h-2.5 bg-[hsl(var(--low))] rounded-full animate-pulse-glow" />
+            <span className="text-sm font-semibold text-intelligence">NEURAL SYSTEMS ONLINE</span>
           </div>
           
-          <Badge className="threat-level-critical px-3 py-1 animate-neural-pulse">
-            <AlertTriangle className="h-3 w-3 mr-1" />
-            <span className="text-xs font-semibold">{criticalCount} CRITICAL THREATS</span>
+          <Badge className="threat-level-critical px-4 py-2 animate-neural-pulse">
+            <AlertTriangle className="h-4 w-4 mr-2" />
+            <span className="text-sm font-bold">{criticalCount} CRITICAL THREATS</span>
           </Badge>
 
-          <Badge className="ai-indicator px-3 py-1">
-            <Brain className="h-3 w-3 mr-1 animate-ai-thinking" />
-            <span className="text-xs font-semibold">AI ACTIVE</span>
+          <Badge className="ai-indicator px-4 py-2">
+            <Brain className="h-4 w-4 mr-2 animate-ai-thinking" />
+            <span className="text-sm font-bold">AI ACTIVE</span>
           </Badge>
         </div>
       </div>
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-5">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-intelligence" />
           <Input
-            placeholder="Search threats, regions, intelligence..."
+            placeholder="Search global threats, regions, intelligence sources..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-80 pl-10 bg-[hsl(var(--input))] border-[hsl(var(--border))] neural-border"
+            className="w-96 pl-12 h-11 bg-[hsl(var(--input))] border-[hsl(var(--border))] neural-border text-base font-medium"
           />
         </div>
 
-        <div className="flex items-center space-x-2 p-2 rounded-lg bg-[hsl(var(--muted))]">
-          <Satellite className="h-4 w-4 text-[hsl(var(--intelligence))]" />
+        <div className="flex items-center space-x-3 px-4 py-3 rounded-lg enterprise-card">
+          <Satellite className="h-5 w-5 text-intelligence animate-pulse-glow" />
           <div className="text-sm">
-            <div className="font-medium">{totalEvents}</div>
-            <div className="text-xs text-muted-foreground">Intel Sources</div>
+            <div className="font-bold text-lg">{totalEvents}</div>
+            <div className="text-xs text-intelligence font-medium">Intel Sources</div>
           </div>
         </div>
 
         <Button
           variant="outline"
-          size="sm"
+          size="default"
           onClick={onRefresh}
-          className="flex items-center space-x-2 neural-border"
+          className="flex items-center space-x-2 neural-border h-11 px-5 font-semibold"
         >
-          <RefreshCw className="h-4 w-4" />
+          <RefreshCw className="h-5 w-5" />
           <span>Sync Intel</span>
         </Button>
 
         <Button
           variant="outline"
-          size="sm"
-          className="flex items-center space-x-2"
+          size="default"
+          className="flex items-center space-x-2 h-11 px-5 font-semibold enterprise-card"
         >
-          <Zap className="h-4 w-4" />
+          <Zap className="h-5 w-5" />
           <span>Auto Analysis</span>
         </Button>
 
         <Button
           variant="outline"
-          size="sm"
-          className="neural-border"
+          size="default"
+          className="neural-border h-11 px-4"
         >
-          <Settings className="h-4 w-4" />
+          <Settings className="h-5 w-5" />
         </Button>
 
         <Button
-          className="flex items-center space-x-2 ai-indicator"
-          size="sm"
+          className="flex items-center space-x-2 ai-indicator h-11 px-6 font-bold"
+          size="default"
         >
-          <Brain className="h-4 w-4" />
+          <Brain className="h-5 w-5" />
           <span>Generate Intel Report</span>
         </Button>
       </div>
 
-      <div className="flex flex-col items-end text-xs text-muted-foreground">
-        <div className="flex items-center gap-1">
-          <div className="w-1.5 h-1.5 bg-[hsl(var(--low))] rounded-full animate-pulse-glow" />
-          <span className="font-mono">{new Date().toLocaleTimeString()}</span>
+      <div className="flex flex-col items-end text-sm">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="w-2 h-2 bg-[hsl(var(--low))] rounded-full animate-pulse-glow" />
+          <span className="font-mono font-semibold text-foreground">{new Date().toLocaleTimeString()}</span>
         </div>
-        <div className="font-mono">{new Date().toLocaleDateString()}</div>
-        <div className="text-[hsl(var(--intelligence))] font-medium">CLASSIFICATION: SECRET</div>
+        <div className="font-mono font-medium text-muted-foreground mb-2">{new Date().toLocaleDateString()}</div>
+        <div className="intel-classification px-3 py-1 rounded text-xs font-bold">CLASSIFICATION: SECRET</div>
       </div>
     </header>
   );
