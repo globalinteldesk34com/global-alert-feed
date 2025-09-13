@@ -2,55 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* OSINT Geopolitical Dashboard Design System
-All colors MUST be HSL for professional dark theme interface.
+/* Global Intelligence Desk - Professional AI-Powered Design System
+All colors MUST be HSL for enterprise-grade dark theme interface.
 */
 
 @layer base {
   :root {
-    /* Dark Professional Theme */
-    --background: 210 24% 6%;
-    --foreground: 210 11% 96%;
+    /* Professional Dark Intelligence Theme */
+    --background: 210 30% 4%;
+    --foreground: 210 15% 98%;
 
-    --card: 210 24% 8%;
-    --card-foreground: 210 11% 96%;
+    --card: 210 25% 6%;
+    --card-foreground: 210 15% 98%;
 
-    --popover: 210 24% 8%;
-    --popover-foreground: 210 11% 96%;
+    --popover: 210 25% 6%;
+    --popover-foreground: 210 15% 98%;
 
-    --primary: 217 91% 60%;
+    --primary: 197 87% 65%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 24% 12%;
-    --secondary-foreground: 210 11% 96%;
+    --secondary: 210 25% 8%;
+    --secondary-foreground: 210 15% 98%;
 
-    --muted: 210 24% 10%;
-    --muted-foreground: 210 5% 60%;
+    --muted: 210 25% 7%;
+    --muted-foreground: 210 8% 65%;
 
-    --accent: 210 24% 12%;
-    --accent-foreground: 210 11% 96%;
+    --accent: 210 25% 10%;
+    --accent-foreground: 210 15% 98%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 90% 65%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 24% 12%;
-    --input: 210 24% 12%;
-    --ring: 217 91% 60%;
+    --border: 210 25% 12%;
+    --input: 210 25% 8%;
+    --ring: 197 87% 65%;
 
-    /* Status Colors */
-    --critical: 0 84% 60%;
-    --high: 25 95% 53%;
-    --medium: 48 96% 53%;
-    --low: 142 76% 36%;
+    /* Intelligence Status Colors */
+    --critical: 0 90% 65%;
+    --high: 25 100% 58%;
+    --medium: 48 100% 58%;
+    --low: 142 80% 40%;
 
-    /* Dashboard Specific */
-    --sidebar: 210 24% 7%;
-    --header: 210 24% 8%;
-    --map-bg: 210 10% 15%;
+    /* AI & Intelligence Colors */
+    --ai-primary: 270 95% 75%;
+    --ai-secondary: 197 87% 65%;
+    --ai-accent: 320 85% 70%;
+    --intelligence: 220 90% 70%;
+    --classified: 340 85% 60%;
+
+    /* Dashboard Components */
+    --sidebar: 210 30% 5%;
+    --header: 210 25% 6%;
+    --map-bg: 210 15% 8%;
+    --intel-panel: 210 25% 7%;
+    --threat-indicator: 0 100% 50%;
+    --safe-indicator: 142 80% 40%;
     
-    /* Glassmorphism Effects */
-    --glass-bg: 210 24% 8% / 0.8;
-    --glass-border: 210 11% 96% / 0.1;
+    /* Advanced Glass & Neural Effects */
+    --glass-bg: 210 25% 6% / 0.9;
+    --glass-border: 210 15% 98% / 0.08;
+    --neural-glow: 197 87% 65% / 0.3;
+    --ai-gradient-start: 270 95% 75%;
+    --ai-gradient-end: 197 87% 65%;
+    
+    /* Threat Level Gradients */
+    --threat-gradient-critical: linear-gradient(135deg, hsl(0 90% 65%), hsl(340 85% 60%));
+    --threat-gradient-high: linear-gradient(135deg, hsl(25 100% 58%), hsl(48 100% 58%));
+    --threat-gradient-safe: linear-gradient(135deg, hsl(142 80% 40%), hsl(197 87% 65%));
     
     --radius: 0.5rem;
 
@@ -153,19 +171,100 @@ All colors MUST be HSL for professional dark theme interface.
     @apply bg-accent;
   }
 
-  /* Animations */
+  /* Professional Intelligence Animations */
   @keyframes pulse-glow {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    50% { opacity: 0.6; }
+  }
+
+  @keyframes neural-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--neural-glow));
+      opacity: 1; 
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--neural-glow));
+      opacity: 0.8; 
+    }
+  }
+
+  @keyframes threat-scan {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+
+  @keyframes ai-thinking {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(2deg); }
   }
 
   .animate-pulse-glow {
     animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  /* Status Indicators */
-  .status-critical { @apply bg-[hsl(var(--critical))] text-white; }
-  .status-high { @apply bg-[hsl(var(--high))] text-white; }
-  .status-medium { @apply bg-[hsl(var(--medium))] text-black; }
-  .status-low { @apply bg-[hsl(var(--low))] text-white; }
+  .animate-neural-pulse {
+    animation: neural-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-threat-scan {
+    animation: threat-scan 2s linear infinite;
+  }
+
+  .animate-ai-thinking {
+    animation: ai-thinking 4s ease-in-out infinite;
+  }
+
+  /* Professional Status Indicators */
+  .status-critical { 
+    @apply bg-[hsl(var(--critical))] text-white border border-[hsl(var(--critical)/0.3)];
+    box-shadow: 0 0 20px hsl(var(--critical) / 0.3);
+  }
+  .status-high { 
+    @apply bg-[hsl(var(--high))] text-white border border-[hsl(var(--high)/0.3)];
+    box-shadow: 0 0 15px hsl(var(--high) / 0.2);
+  }
+  .status-medium { 
+    @apply bg-[hsl(var(--medium))] text-black border border-[hsl(var(--medium)/0.3)];
+    box-shadow: 0 0 10px hsl(var(--medium) / 0.2);
+  }
+  .status-low { 
+    @apply bg-[hsl(var(--low))] text-white border border-[hsl(var(--low)/0.3)];
+    box-shadow: 0 0 10px hsl(var(--low) / 0.2);
+  }
+
+  /* AI & Intelligence Indicators */
+  .ai-indicator {
+    background: linear-gradient(135deg, hsl(var(--ai-gradient-start)), hsl(var(--ai-gradient-end)));
+    @apply text-white border border-[hsl(var(--ai-primary)/0.3)];
+    box-shadow: 0 0 20px hsl(var(--ai-primary) / 0.3);
+  }
+
+  .threat-level-critical {
+    background: var(--threat-gradient-critical);
+    @apply text-white;
+  }
+
+  .threat-level-safe {
+    background: var(--threat-gradient-safe);
+    @apply text-white;
+  }
+
+  .intel-classification {
+    @apply bg-[hsl(var(--classified))] text-white border border-[hsl(var(--classified)/0.3)];
+    box-shadow: 0 0 15px hsl(var(--classified) / 0.2);
+  }
+
+  /* Glass Morphism Effects */
+  .glass-card {
+    backdrop-filter: blur(12px);
+    @apply bg-[hsl(var(--glass-bg))] border border-[hsl(var(--glass-border))];
+  }
+
+  .neural-border {
+    border: 1px solid hsl(var(--neural-glow));
+    box-shadow: 
+      0 0 20px hsl(var(--neural-glow)),
+      inset 0 0 20px hsl(var(--neural-glow) / 0.1);
+  }
 }

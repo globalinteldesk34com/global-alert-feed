@@ -3,6 +3,7 @@ import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import { InteractiveMap } from './InteractiveMap';
 import { EventsList } from './EventsList';
+import { IntelligencePanel } from './IntelligencePanel';
 import { sampleEvents, GeopoliticalEvent } from '@/data/sampleEvents';
 
 export const Dashboard = () => {
@@ -98,6 +99,7 @@ export const Dashboard = () => {
           selectedTimeRange={selectedTimeRange}
           onTimeRangeChange={setSelectedTimeRange}
           eventCounts={eventCounts}
+          events={filteredEvents}
         />
         
         <InteractiveMap
@@ -112,6 +114,8 @@ export const Dashboard = () => {
           onSearchChange={setSearchQuery}
           onEventSelect={handleEventSelect}
         />
+
+        <IntelligencePanel events={filteredEvents} />
       </div>
     </div>
   );
