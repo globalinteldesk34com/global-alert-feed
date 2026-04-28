@@ -1,0 +1,102 @@
+{
+  "project_name": "Global Intel Desk",
+  "domain": "Travel Security Intelligence Service",
+  "theme": "Dark Theme (Mission Control Aesthetic)",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) + Tactical Minimalism",
+  "colors": {
+    "background": "#050505",
+    "surface": "#121212",
+    "surface_hover": "#1A1A1A",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "border_focus": "rgba(255, 255, 255, 0.3)",
+    "primary": "#FFFFFF",
+    "primary_foreground": "#000000",
+    "secondary": "#2A2A2A",
+    "secondary_foreground": "#FFFFFF",
+    "accent_alert": "#FF3B30",
+    "accent_warning": "#FF9F0A",
+    "accent_safe": "#30D158",
+    "text_main": "#FFFFFF",
+    "text_muted": "#A1A1AA"
+  },
+  "typography": {
+    "font_heading": "Chivo, sans-serif",
+    "font_body": "Inter, sans-serif",
+    "font_mono": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-none",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base leading-relaxed text-zinc-400",
+      "label_overline": "text-xs font-mono uppercase tracking-[0.2em] text-zinc-500",
+      "metric_value": "text-3xl sm:text-4xl font-mono font-medium tracking-tight text-white"
+    }
+  },
+  "layout": {
+    "spacing_scale": "Generous (p-8, p-12) for Marketing; Dense (p-4, p-6) for Dashboard",
+    "dashboard_grid": "The 'Control Room' Grid - grid-cols-1 md:grid-cols-3 lg:grid-cols-4, tight gaps (gap-4 or gap-6). Cards have h-full.",
+    "marketing_grid": "The 'Swiss Grid' - heavily asymmetrical, overlapping elements, grid-cols-12.",
+    "container_max_width": "max-w-7xl mx-auto",
+    "border_radius": "rounded-none or rounded-sm (max 2px) to maintain technical/authoritative feel"
+  },
+  "surfaces_and_micro_themes": {
+    "dashboard_cards": "Grid Borders: border-collapse style layout. Flat background (#121212), 1px solid border (border-white/10). No soft shadows.",
+    "header_nav": "Crystal Glass: bg-black/60 backdrop-blur-xl border-b border-white/10.",
+    "alert_banners": "Retro-Futurism/Terminal: Deep black bg, stark 1px solid border matching alert color (e.g. border-red-500/50), monospace text."
+  },
+  "components_strategy": {
+    "marketing": "Custom HTML/Tailwind. Raw sections. Avoid Shadcn Cards to ensure asymmetry. Use Marquee for live intelligence feed tickers.",
+    "dashboard": "Shadcn UI, highly customized. Use Tables, Tabs, Select. Strip default radiuses (set to 0).",
+    "charts": "Shadcn Chart components (Recharts). Use monochrome lines or strictly functional colors (Safe/Warning/Alert) with no gradients.",
+    "interactive": "Hover states must explicitly set text color (hover:bg-zinc-800 hover:text-white). Focus rings must be sharp, 1px solid white."
+  },
+  "motion_interactions": {
+    "hover": "Instant background color shifts. No bouncy animations.",
+    "transitions": "transition-colors duration-150 ease-in-out",
+    "data_feed": "Use subtle Framer Motion staggered fade-ins for list items (itinerary, threat alerts)."
+  },
+  "testing_attributes": {
+    "rule": "All interactive elements MUST include data-testid.",
+    "examples": ["data-testid='login-submit-button'", "data-testid='nav-dashboard-link'", "data-testid='threat-alert-card'"]
+  },
+  "media_and_images": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1774646598677-cc38cb3cac00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjB0b3BvZ3JhcGh5JTIwbWFwfGVufDB8fHx8MTc3NzM1MDE2Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract blue topographic map. Usage: Landing page hero background with a heavy bg-black/70 overlay to ensure stark white text pops.",
+      "category": "hero"
+    },
+    "services_background": {
+      "url": "https://images.unsplash.com/photo-1580360119963-48b239357899?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwxfHxzYXRlbGxpdGUlMjB2aWV3JTIwY2l0eSUyMG5pZ2h0fGVufDB8fHx8MTc3NzM1MDE2Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Satellite view of city at night. Usage: Threat Alerts or Services overview section background with dark overlay.",
+      "category": "background"
+    },
+    "about_image": {
+      "url": "https://images.pexels.com/photos/1002175/pexels-photo-1002175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Silhouette of a man at airport with airplane reflections. Usage: 'About Us' or 'Traveler Monitoring' feature image, cropped strictly square or tall rectangle.",
+      "category": "content"
+    },
+    "sponsor_logo_1": {
+      "url": "https://images.pexels.com/photos/26576975/pexels-photo-26576975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Minimalist logo placeholder for corporate partners. Apply grayscale and high contrast filters if needed.",
+      "category": "logo"
+    }
+  },
+  "iconography": {
+    "library": "lucide-react",
+    "style": "Stroke width 1.5, strict geometry, no filled icons unless representing critical alarms.",
+    "usage": "Use icons sparingly. Pair with monospace overlines for data labels."
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the Dark Theme for both marketing and dashboard. The brand is 'Global Intel Desk' and the vibe is 'Geopolitical Briefing Room'.",
+    "Do NOT use 'Space Grotesk'. Stick to Chivo for headings, Inter for body, JetBrains Mono for data labels.",
+    "Implement the 'Control Room' grid for the dashboard: tight gaps (gap-4), 1px solid borders (border-white/10), flat #121212 backgrounds. Cards should not have shadows or large border radii (use rounded-none or rounded-sm).",
+    "For the hero section, use the provided hero_background image with a bg-black/70 to bg-black/80 overlay. Text must be highly legible.",
+    "Use color purely for functional status in the dashboard: White for neutral/primary, Amber/Red for alerts, Green for safe.",
+    "Add data-testid attributes to all buttons, links, and forms.",
+    "Ensure all components use Shadcn, but customize the CSS variables to match this strictly high-contrast, zero-radius tactical theme.",
+    "The Risk Assessment cards should utilize a Bento-style grid inside the dashboard.",
+    "Never use generic purple/teal gradients.",
+    "Write components in .js/.jsx syntax instead of .tsx, as specified in the environment rules."
+  ]
+}
