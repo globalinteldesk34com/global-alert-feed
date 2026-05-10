@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BrowserRouter,
   Routes,
@@ -7,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
+
 import { AuthProvider } from "./lib/auth";
 
 function App() {
