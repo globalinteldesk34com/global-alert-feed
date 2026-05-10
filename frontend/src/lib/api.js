@@ -1,25 +1,12 @@
 import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const API = `${BACKEND_URL}/api`;
-
-const api = axios.create({ baseURL: API });
-
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("gid_token");
-  if (token) config.headers.Authorization = `Bearer ${token}`;
-  return config;
+const api = axios.create({
+  baseURL:
+    process.env.REACT_APP_BACKEND_URL ||
+    "https://global-alert-feed.vercel.app",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
-
-api.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    if (err?.response?.status === 401) {
-      localStorage.removeItem("gid_token");
-      localStorage.removeItem("gid_user");
-    }
-    return Promise.reject(err);
-  }
-);
 
 export default api;
