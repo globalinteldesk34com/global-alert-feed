@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:
-    "https://your-backend-url.onrender.com/api",
+  baseURL: "https://global-alert-feed.vercel.app/api",
 });
 
 export default api;
