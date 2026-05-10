@@ -5,12 +5,16 @@ import React, {
   useState,
 } from "react";
 
-import { supabase } from "./supabase";
+import { supabase } from "../supabase";
 
-const AuthContext = createContext(null);
+const AuthContext =
+  createContext(null);
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+export const AuthProvider = ({
+  children,
+}) => {
+  const [user, setUser] =
+    useState(null);
 
   const [loading, setLoading] =
     useState(true);
@@ -25,11 +29,14 @@ export const AuthProvider = ({ children }) => {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setUser(session?.user || null);
-      }
-    );
+    } =
+      supabase.auth.onAuthStateChange(
+        (_event, session) => {
+          setUser(
+            session?.user || null
+          );
+        }
+      );
 
     return () =>
       subscription.unsubscribe();
@@ -55,10 +62,12 @@ export const AuthProvider = ({ children }) => {
     password
   ) => {
     const { data, error } =
-      await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
+      await supabase.auth.signInWithPassword(
+        {
+          email,
+          password,
+        }
+      );
 
     if (error) throw error;
 
