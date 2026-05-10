@@ -52,7 +52,10 @@ export const AuthProvider = ({
         password,
       });
 
-    if (error) throw error;
+    if (error) {
+      console.log(error);
+      throw error;
+    }
 
     return data.user;
   };
@@ -69,7 +72,10 @@ export const AuthProvider = ({
         }
       );
 
-    if (error) throw error;
+    if (error) {
+      console.log(error);
+      throw error;
+    }
 
     return data.user;
   };
